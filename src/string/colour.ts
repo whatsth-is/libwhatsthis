@@ -1,40 +1,6 @@
 import htmlCodes from "../codes/html.json";
 import xkcdCodes from "../codes/xkcd.json";
-
-export interface RGB {
-	r: number;
-	g: number;
-	b: number;
-}
-
-export interface HSL {
-	h: number;
-	s: number;
-	l: number;
-}
-
-export interface CMYK {
-	c: number;
-	m: number;
-	y: number;
-	k: number;
-}
-
-export interface Hue {
-	p: number;
-	q: number;
-	t: number;
-}
-
-export interface IColourValues {
-	hex: string;
-	rgb: RGB;
-	hsl: HSL;
-	cmyk: CMYK;
-	htmlCode: string;
-	xkcdCode: string;
-	oxVar: string;
-}
+import { CMYK, HSL, IColourValues, RGB } from "./interfaces";
 
 const hexToRgb = (hex: string): RGB => {
 	hex = hex.replace("#", "");

@@ -1,7 +1,10 @@
-export {
-	CMYK, HSL, Hue, RGB, IColourValues, ConversionType, UserAgent, cmykToAll, hexToAll, hslToAll, rgbToAll,
-	isValidColorString, calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode, formatBytes,
-	getCountryFlag, isValidIP, StringConversion, getUserAgent
-} from './string';
+// String
+export { RGB, HSL, CMYK, Hue, IColourValues, UserAgent, ConversionType } from './string/interfaces';
+export { cmykToAll, hexToAll, hslToAll, rgbToAll, isValidColorString } from './string/colour';
+export { StringConversion } from './string/conversion';
+export { calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode } from './string/cron';
+export { formatBytes, getCountryFlag, getUserAgent, isValidIP } from './string';
 
-export { IPAddresses, IPGeolocation, getBothIPAddresses, getIPAddress, getIPGeolocation } from './network';
+// Network
+export { IPAddresses, IPGeolocation } from './network/interfaces';
+export { getBothIPAddresses, getIPAddress, getIPGeolocation } from './network/connectioninfo';

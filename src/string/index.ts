@@ -1,25 +1,5 @@
 import UAParser from 'ua-parser-js';
-
-export { calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode } from './cron';
-export { CMYK, HSL, Hue, RGB, IColourValues, cmykToAll, hexToAll, hslToAll, rgbToAll, isValidColorString } from './colour';
-export { ConversionType, StringConversion } from './conversion';
-
-export interface UserAgent {
-	browser: {
-		name: string;
-		version: string;
-	};
-	engine: {
-		name: string;
-		version: string;
-	};
-	system: {
-		name: string;
-		version: string;
-	};
-	device?: string;
-	cpu?: string;
-}
+import { UserAgent } from './interfaces';
 
 /**
  * Formats a number of bytes as a human-readable string, with the size unit automatically selected based on the size of the number.

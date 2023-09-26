@@ -1,13 +1,6 @@
 import { AES } from "crypto-es/lib/aes";
 import { TripleDES } from "crypto-es/lib/tripledes";
-
-export enum ConversionType {
-	Base64 = 0,
-	Hex = 1,
-	URI = 2,
-	AES = 10,
-	TDES = 11,
-}
+import { ConversionType } from "./interfaces";
 
 /**
  * Converts a string to or from a specified encoding type.
