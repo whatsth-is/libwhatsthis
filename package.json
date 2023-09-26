@@ -1,0 +1,33 @@
+{
+  "name": "libwhatsthis",
+  "version": "0.1.0",
+  "description": "Provides various toolbox functionality",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soup-bowl/whatsth.is-libfront.git"
+  },
+  "author": "soup-bowl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soup-bowl/whatsth.is-libfront/issues"
+  },
+  "homepage": "https://github.com/soup-bowl/whatsth.is-libfront#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "rollup": "^3.29.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
