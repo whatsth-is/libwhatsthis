@@ -8,7 +8,8 @@ export default {
 	input: 'src/main.ts',
 	output: {
 		file: 'dist/main.js',
-		format: 'cjs', // CommonJS format for compatibility with React
+		format: 'esm',
+		sourcemap: true,
 	},
 	plugins: [
 		resolve(),
@@ -18,5 +19,5 @@ export default {
 			declaration: true,
 		}),
 	],
-	external: ['react', 'react-dom'], // Declare React and ReactDOM as external dependencies
+	external: ['react', 'react-dom'],
 };
