@@ -18,17 +18,18 @@
   },
   "homepage": "https://github.com/soup-bowl/whatsth.is-libfront#readme",
   "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "rollup": "^3.29.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.35.0",
-    "@rollup/plugin-json": "^6.0.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "cronstrue": "^2.32.0",
+    "crypto-es": "^2.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

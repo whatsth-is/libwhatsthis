@@ -1,5 +1,6 @@
 export { calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode } from './cron';
 export { CMYK, HSL, Hue, RGB, IColourValues, cmykToAll, hexToAll, hslToAll, rgbToAll, isValidColorString } from './colour';
+export { ConversionType, StringConversion } from './conversion';
 
 /**
  * Formats a number of bytes as a human-readable string, with the size unit automatically selected based on the size of the number.
