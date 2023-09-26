@@ -1,3 +1,7 @@
+// API
+export { APIAgentType, IDNSResult, IInspectionDetails, IInspectionResult, IInspectionTechnology, IOpenAPI, IWHOISResult } from './api/interfaces';
+export { default as Agent } from './api/agent';
+
 // String
 export { RGB, HSL, CMYK, Hue, IColourValues, UserAgent, ConversionType } from './string/interfaces';
 export { cmykToAll, hexToAll, hslToAll, rgbToAll, isValidColorString } from './string/colour';
