@@ -7,15 +7,15 @@ export { ConversionType, StringConversion } from './conversion';
  * 
  * Based on this StackOverflow answer: https://stackoverflow.com/a/35696506
  *
- * @param {number} bytes - The number of bytes to format.
- * @param {number} [decimals=2] - The number of decimal places to include in the formatted string. Defaults to 2.
- * @returns {string} A human-readable string representing the given number of bytes.
+ * @param bytes - The number of bytes to format.
+ * @param decimals - The number of decimal places to include in the formatted string. Defaults to 2.
+ * @returns A human-readable string representing the given number of bytes.
  *
  * @example
  * const fileSize = formatBytes(1024);
  * console.log(fileSize); // '1.00 KB'
  */
-export const formatBytes = (bytes: number, decimals: number = 2) => {
+export const formatBytes = (bytes: number, decimals: number = 2): string => {
 	if (bytes === 0) return '0 Bytes';
 
 	const k = 1024;
@@ -32,14 +32,14 @@ export const formatBytes = (bytes: number, decimals: number = 2) => {
  * 
  * Amazing code from this SO: https://stackoverflow.com/a/34529037
  *
- * @param {string} ip - The string to test.
- * @returns {boolean} True if the string represents a valid IP address, false otherwise.
+ * @param ip - The string to test.
+ * @returns True if the string represents a valid IP address, false otherwise.
  *
  * @example
  * const valid = isValidIP('192.0.2.1');
  * console.log(valid); // true
  */
-export const isValidIP = (ip: string) => {
+export const isValidIP = (ip: string): boolean => {
 	const expression = /((^\s*((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))\s*$)|(^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$))/;
 
 	if (expression.test(ip)) {
@@ -52,9 +52,9 @@ export const isValidIP = (ip: string) => {
  * Get a country flag emoji based on the provided country code.
  * Uses Unicode regional indicator symbols to represent country flags.
  * Credit: OpenAI
- * @param {string} countryCode - The two-letter ISO country code (e.g., 'US', 'GB').
- * @returns {string | null} The country flag emoji if a valid countryCode is provided,
- *                         otherwise returns null for an invalid countryCode.
+ * @param countryCode - The two-letter ISO country code (e.g., 'US', 'GB').
+ * @returns The country flag emoji if a valid countryCode is provided,
+ *          otherwise returns null for an invalid countryCode.
  */
 export const getCountryFlag = (countryCode: string): string | null => {
 	const base = 0x1F1A5;

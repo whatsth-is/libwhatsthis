@@ -5,10 +5,10 @@ import cronstrue from "cronstrue";
 /**
  * Calculates a human-readable description of a cron expression string.
  * 
- * @param {string} input - The cron expression string to parse.
- * @returns {string} A human-readable description of the cron expression, or an error message if the string is invalid.
+ * @param input - The cron expression string to parse.
+ * @returns A human-readable description of the cron expression, or an error message if the string is invalid.
  */
-export const calculateCronString = (input: string) => {
+export const calculateCronString = (input: string): string => {
 	let output: string = '';
 	try {
 		output = cronstrue.toString(decodeCronCode(input));
@@ -22,10 +22,10 @@ export const calculateCronString = (input: string) => {
 /**
  * Checks if a string is a valid cron expression code.
  *
- * @param {string} input - The string to check.
- * @returns {boolean} True if the string is a valid cron expression code, false otherwise.
+ * @param input - The string to check.
+ * @returns True if the string is a valid cron expression code, false otherwise.
  */
-export const checkForValidCronCode = (input: string) => {
+export const checkForValidCronCode = (input: string): boolean => {
 	if (~[5, 6].indexOf(decodeCronCode(input).split(' ').length)) {
 		return true;
 	}
@@ -35,15 +35,15 @@ export const checkForValidCronCode = (input: string) => {
 /**
  * Encodes a cron expression code string by replacing spaces with underscores.
  * 
- * @param {string} input - The cron expression code string to encode.
- * @returns {string} The encoded cron expression code string.
+ * @param input - The cron expression code string to encode.
+ * @returns The encoded cron expression code string.
  */
 export const encodeCronCode = (input: string): string => input.split(' ').join('_');
 
 /**
  * Decodes a cron expression code string by replacing underscores with spaces.
  * 
- * @param {string} input - The cron expression code string to decode.
- * @returns {string} The decoded cron expression code string.
+ * @param input - The cron expression code string to decode.
+ * @returns The decoded cron expression code string.
  */
 export const decodeCronCode = (input: string): string => input.split('_').join(' ');

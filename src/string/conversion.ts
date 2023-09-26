@@ -12,13 +12,13 @@ export enum ConversionType {
 /**
  * Converts a string to or from a specified encoding type.
  *
- * @param {'to' | 'from'} toConvert - Whether to convert the string to or from the specified encoding type.
- * @param {ConversionType} type - The encoding type to convert to or from.
- * @param {string} thing - The string to be converted.
- * @param {string} [phrase=''] - The encryption phrase to use (if the specified encoding type is AES or TDES).
- * @returns {string} The converted string.
+ * @param toConvert - Whether to convert the string to or from the specified encoding type.
+ * @param type - The encoding type to convert to or from.
+ * @param thing - The string to be converted.
+ * @param phrase - The encryption phrase to use (if the specified encoding type is AES or TDES).
+ * @returns The converted string.
  *
- * @throws {Error} If the specified encoding type is invalid.
+ * @throws Error If the specified encoding type is invalid.
  *
  * @example
  * const encoded = StringConversion('to', ConversionType.Base64, 'Hello, world!');
