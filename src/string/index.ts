@@ -1,6 +1,25 @@
+import UAParser from 'ua-parser-js';
+
 export { calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode } from './cron';
 export { CMYK, HSL, Hue, RGB, IColourValues, cmykToAll, hexToAll, hslToAll, rgbToAll, isValidColorString } from './colour';
 export { ConversionType, StringConversion } from './conversion';
+
+export interface UserAgent {
+	browser: {
+		name: string;
+		version: string;
+	};
+	engine: {
+		name: string;
+		version: string;
+	};
+	system: {
+		name: string;
+		version: string;
+	};
+	device?: string;
+	cpu?: string;
+}
 
 /**
  * Formats a number of bytes as a human-readable string, with the size unit automatically selected based on the size of the number.
@@ -73,4 +92,31 @@ export const getCountryFlag = (countryCode: string): string | null => {
 
 	// Return null if the countryCode is invalid
 	return null;
+};
+
+/**
+ * Gets the appliance details from the provided UserAgent, or from the system.
+ * @param userAgent A valid browser UserAgent, or the system if unspecified.
+ * @returns A split-up UserAgent object.
+ */
+export const getUserAgent = (userAgent = window.navigator.userAgent): UserAgent => {
+	const uaParser = new UAParser();
+	uaParser.setUA(userAgent);
+
+	return {
+		browser: {
+			name: uaParser.getBrowser().name ?? "",
+			version: uaParser.getBrowser().version ?? ""
+		},
+		engine: {
+			name: uaParser.getEngine().name ?? "",
+			version: uaParser.getEngine().version ?? ""
+		},
+		system: {
+			name: uaParser.getOS().name ?? "",
+			version: uaParser.getOS().version ?? ""
+		},
+		cpu: uaParser.getCPU().architecture,
+		device: uaParser.getDevice().model
+	};
 };
