@@ -3,3 +3,5 @@ export {
 	isValidColorString, calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode, formatBytes,
 	getCountryFlag, isValidIP, StringConversion, getUserAgent
 } from './string';
+
+export { IPAddresses, IPGeolocation, getBothIPAddresses, getIPAddress, getIPGeolocation } from './network';
