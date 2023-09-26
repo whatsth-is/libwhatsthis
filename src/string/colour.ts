@@ -1,5 +1,5 @@
-import htmlCodes from "./codes/html.json";
-import xkcdCodes from "./codes/xkcd.json";
+import htmlCodes from "../codes/html.json";
+import xkcdCodes from "../codes/xkcd.json";
 
 export interface RGB {
 	r: number;
