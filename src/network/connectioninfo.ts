@@ -18,6 +18,11 @@ export interface IPGeolocation {
 	icon?: string;
 }
 
+/**
+ * Gets the current client's IP address.
+ * @param ipv6
+ * @returns The client IP address.
+ */
 export async function getIPAddress(ipv6 = false): Promise<string> {
 	try {
 		const response = await fetch(`https://${ipv6 ? '6' : '4'}.ident.me/`);
@@ -34,6 +39,10 @@ export async function getIPAddress(ipv6 = false): Promise<string> {
 	}
 }
 
+/**
+ * Gets both IPv4 and IPv6 variants of the client IP address.
+ * @returns Both IPs.
+ */
 export async function getBothIPAddresses(): Promise<IPAddresses> {
 	try {
 		const [ipv4Response, ipv6Response] = await Promise.all([
@@ -54,6 +63,13 @@ export async function getBothIPAddresses(): Promise<IPAddresses> {
 	}
 }
 
+/**
+ * Gets IP geolocational data.
+ * 
+ * The API appears to be blacklisted by most filters, so a browser-level response might not work.
+ * @param ip IP address to perform the lookup on.
+ * @returns IP Geolocation data.
+ */
 export async function getIPGeolocation(ip: string): Promise<IPGeolocation> {
 	try {
 		const response = await fetch(`https://ipinfo.io/${ip}/json`);

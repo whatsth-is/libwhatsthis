@@ -5,8 +5,7 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "rollup -c",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "repository": {
     "type": "git",
@@ -17,11 +16,12 @@
   "bugs": {
     "url": "https://github.com/soup-bowl/whatsth.is-libfront/issues"
   },
-  "homepage": "https://github.com/soup-bowl/whatsth.is-libfront#readme",
+  "homepage": "https://whatsth.is",
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@types/ua-parser-js": "^0.7.37",
     "eslint": "^8.50.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -32,7 +32,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@types/ua-parser-js": "^0.7.37",
     "cronstrue": "^2.32.0",
     "crypto-es": "^2.0.4",
     "react": "^18.2.0",
