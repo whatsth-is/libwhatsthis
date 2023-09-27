@@ -1,4 +1,4 @@
-name: Per-commit Test
+name: 🕵 Per-commit Test
 
 on:
   push:
