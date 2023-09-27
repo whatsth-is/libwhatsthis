@@ -19,6 +19,7 @@ export default {
 		typescript({
 			tsconfig: 'tsconfig.json',
 			declaration: true,
+			exclude: ["**/__tests__", "**/*.test.ts"],
 		}),
 	],
 	external: ['react', 'react-dom'],
