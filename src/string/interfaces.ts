@@ -15,6 +15,19 @@ export interface UserAgent {
 	cpu?: string;
 }
 
+export interface ConversionTime {
+	string: Date;
+	unix: number;
+	overflow: boolean;
+	type: SecondType;
+}
+
+export enum SecondType {
+	s = 1,
+	ms = 2,
+	us = 3,
+}
+
 export interface RGB {
 	r: number;
 	g: number;

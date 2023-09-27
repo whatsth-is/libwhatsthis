@@ -3,10 +3,11 @@ export { APIAgentType, IDNSResult, IInspectionDetails, IInspectionResult, IInspe
 export { default as Agent } from './api/agent';
 
 // String
-export { RGB, HSL, CMYK, Hue, IColourValues, UserAgent, ConversionType } from './string/interfaces';
+export { RGB, HSL, CMYK, Hue, IColourValues, UserAgent, ConversionType, ConversionTime, SecondType } from './string/interfaces';
 export { cmykToAll, hexToAll, hslToAll, rgbToAll, isValidColorString } from './string/colour';
 export { StringConversion } from './string/conversion';
 export { calculateCronString, checkForValidCronCode, decodeCronCode, encodeCronCode } from './string/cron';
+export { timeOutput } from './string/time';
 export { formatBytes, getCountryFlag, getUserAgent, isValidIP } from './string';
 
 // Network
