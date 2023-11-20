@@ -9,6 +9,10 @@ export interface APIAgentType {
 		dns: (url: string) => Promise<IDNSResult>;
 		whois: (url: string) => Promise<IWHOISResult>;
 	};
+	Signalling: {
+		send: (clientId: string, signalData: ISignalData) => Promise<any>;
+		recieve: (clientId: string) => Promise<any>;
+	};
 }
 
 export interface IOpenAPI {
@@ -63,4 +67,9 @@ export interface IWHOISResult {
 	created: string;
 	updated: string;
 	expires: string;
+}
+
+export interface ISignalData {
+	type: string;
+	content: string;
 }
