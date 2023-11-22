@@ -13,3 +13,8 @@ export { formatBytes, getCountryFlag, getUserAgent, isValidIP } from './string';
 // Network
 export { IPAddresses, IPGeolocation } from './network/interfaces';
 export { getBothIPAddresses, getIPAddress, getIPGeolocation } from './network/connectioninfo';
+
+// Scratch
+export { IScratchpadItem, ScratchpadItemType } from './scratch/interfaces';
+export { readFromLocalStorage, writeToLocalStorage } from './scratch/localStorage';
+export { addScratch, createItem, getScratches, removeScratch, saveScratches, updateScratch } from './scratch/scratch';
