@@ -3,12 +3,11 @@ name: 🕵 Per-commit Test
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
     branches:
-    - main
+      - main
   workflow_dispatch:
-    
 
 jobs:
   build:

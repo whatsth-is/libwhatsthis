@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Package
         run: npm ci
-        
+
       - name: Configure for Deployment
         run: npm run build
 
